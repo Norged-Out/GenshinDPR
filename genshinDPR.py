@@ -56,7 +56,7 @@ def mavuika():
 
 # Main function to handle dynamic function calling
 def main():
-    user_input = input("Enter the character to call: ").strip()
+    user_input = 'mavuika' #input("Enter the character to call: ").strip()
 
     # Dynamically call the function using getattr
     func = getattr(sys.modules[__name__], user_input, None)
