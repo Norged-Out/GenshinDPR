@@ -25,21 +25,29 @@ def mavuika():
     
     builds = []
     rawDPRS = []
+    #caDPRS = []
+    #ultDPRS = []
     avgDPRS = []
     idealDPRS = []
     for build in data[1:]:
         build = build.strip().split()
         bName = build[0]
         rawDPR = int(build[1]) * 8 + int(build[2]) + int(build[3])
-        avgDPR = int(build[1]) * 4 + int(build[4]) * 4 + int(build[2]) + int(build[3])
-        idealDPR = int(build[1]) * 4 + int(build[4]) * 4 + int(build[5]) + int(build[6])
+        #avgCADPR = int(build[1]) * 4 + int(build[4]) * 4 + int(build[2]) + int(build[3])
+        #avgUltDPR = int(build[1]) * 6 + int(build[4]) * 2 + int(build[5]) + int(build[6])
+        avgDPR = int(build[1]) * 5 + int(build[4]) * 3 + int(build[5]) + int(build[6])
+        idealDPR = int(build[1]) * 4 + int(build[4]) * 2 + int(build[5]) * 2 + int(build[6])
         builds.append(bName)
         rawDPRS.append(rawDPR)
+        #caDPRS.append(avgCADPR)
+        #ultDPRS.append(avgUltDPR)
         avgDPRS.append(avgDPR)
         idealDPRS.append(idealDPR)
         # print("{:10} {:<15} {:<15} {:<15}\n".format(bName, rawDPR, avgDPR, idealDPR))
 
     rawRankings = rank_DPR(rawDPRS)
+    #avgCARankings = rank_DPR(caDPRS)
+    #avgUltRankings = rank_DPR(ultDPRS)
     avgRankings = rank_DPR(avgDPRS)
     idealRankings = rank_DPR(idealDPRS)
 
