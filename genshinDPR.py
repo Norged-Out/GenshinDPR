@@ -32,10 +32,13 @@ def mavuika():
     for build in data[1:]:
         build = build.strip().split()
         bName = build[0]
+        # calculate just the raw damage potential
         rawDPR = int(build[1]) * 8 + int(build[2]) + int(build[3])
         #avgCADPR = int(build[1]) * 4 + int(build[4]) * 4 + int(build[2]) + int(build[3])
         #avgUltDPR = int(build[1]) * 6 + int(build[4]) * 2 + int(build[5]) + int(build[6])
+        # calculate melt damage with error
         avgDPR = int(build[1]) * 5 + int(build[4]) * 3 + int(build[5]) + int(build[6])
+        # calculate the ideal melt damage
         idealDPR = int(build[1]) * 4 + int(build[4]) * 2 + int(build[5]) * 2 + int(build[6])
         builds.append(bName)
         rawDPRS.append(rawDPR)
